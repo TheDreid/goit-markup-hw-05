@@ -215,9 +215,6 @@ body {
   background-repeat: no-repeat;
 }
 
-.container-hero {
-}
-
 .hero-title {
   text-align: center;
   width: 696px;
@@ -374,6 +371,28 @@ body {
   width: 370px;
 }
 
+.work-list-text {
+  text-align: center;
+  color: var(--white-text-color);
+  background-color: rgba(47, 48, 58, 0.8);
+  position: absolute;
+  padding: 27px 0px 27px 0px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.12;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  bottom: 0%;
+  width: 100%;
+}
+
+.work-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
 /*------team------*/
 
 .team-social-item:hover,
@@ -403,7 +422,7 @@ body {
   display: flex;
   width: 44px;
   height: 44px;
-  transition-property: color;
+  transition-property: color, background-color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -469,7 +488,6 @@ body {
   justify-content: center;
   display: flex;
   gap: 30px;
-  margin-bottom: 94px;
 }
 
 .clients-name {
@@ -486,7 +504,7 @@ body {
   color: #afb1b8;
   border: 1px solid #afb1b8;
   border-radius: 4px;
-  transition-property: color;
+  transition-property: color, border-color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -611,7 +629,7 @@ body {
   align-items: center;
   justify-content: center;
   color: var(--white-text-color);
-  transition-property: color;
+  transition-property: color, background-color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -624,50 +642,6 @@ body {
 .footer-social-link:focus {
   background-color: var(--accent-color);
 }
-
-/* .footer-social {
-  margin-left: 70px;
-}
-
-.footer-social-list {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-
-.footer-social-link::before {
-  border-radius: 50%;
-  color: #afb1b8;
-
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  background-position: center;
-  width: 44px;
-  height: 44px;
-}
-
-.footer-social-logo {
-  fill: currentColor;
-}
-
-.footer-social-title {
-  color: var(--white-text-color);
-  font-family: Roboto;
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 16px;
-  letter-spacing: 0.03em;
-  padding-bottom: 20px;
-}
-
-.footer-social-link {
-  width: 20px;
-  height: 20px;
-  background-color: transparent;
-  color: var(--white-text-color);
-} */
 
 /*--------filter-btn-------*/
 
@@ -697,7 +671,7 @@ body {
   background-color: var(--team-background-color);
   cursor: pointer;
   border: none;
-  transition-property: color;
+  transition-property: color, background-color, box-shadow;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -724,9 +698,6 @@ body {
   display: block;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
-}
-
-.projects-item {
 }
 
 .container-projects {
@@ -769,26 +740,17 @@ body {
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
-  line-height: 1.56;
+  line-height: 1.12;
   letter-spacing: 0.03em;
   top: 0;
   left: 0;
   height: 100%;
   transform: translateY(100%);
-  transition: transform 300ms linear;
+  transition-property: background-color, transform;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-
 /* .................backdrop............ */
-
-.backdrop {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  background-color: rgba(0, 0, 0, 0.2);
-  transition: opacity 300ms linear;
-  visibility: 300ms linear;
-}
 
 .modal {
   width: 528px;
@@ -799,6 +761,17 @@ body {
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
   transition: transform 300ms linear;
+}
+
+.backdrop {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: opacity 250ms;
+  visibility: 300ms linear;
 }
 
 .backdrop.is-hidden .modal {
@@ -823,6 +796,5 @@ body {
 
 .is-hidden {
   opacity: 0;
-  visibility: hidden;
   pointer-events: none;
 }
